@@ -1,0 +1,40 @@
+{
+    "classifier": {
+        "IMG_ROWS": 28,
+        "IMG_COLS": 28,
+        "NUM_CLASSES": 10,
+        "TEST_SIZE": 0.2,
+        "NO_EPOCHS": 5,
+        "BATCH_SIZE": 128,
+        "class_names": [
+            "T-shirt/top",
+            "Trouser",
+            "Pullover",
+            "Dress",
+            "Coat",
+            "Sandal",
+            "Shirt",
+            "Sneaker",
+            "Bag",
+            "Ankle boot"
+        ]
+    },
+    "ml_server": {
+        "url": "http://localhost:8501/v1/models/fashion_mnist:predict"
+    },
+    "kafka": {
+        "bootstrap": [
+            "127.0.0.1:9092"
+        ],
+        "topic": "fashion_mnist",
+        "consumer_group": "fashion_mnist_group",
+        "num_partitions": 1,
+        "replication_factor": 1
+    },
+    "pubsub": {
+        "project_id": "vectorai-333617",
+        "topic": "fashion_mnist",
+        "subscription": "fashion_mnist_sub",
+        "auth_file": "vectorai-333617-09365b0c3d60.json"
+    }
+}
